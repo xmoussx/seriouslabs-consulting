@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serious Labs Consulting — iGaming Strategy & Compliance</title>
+    <meta name="description" content="Expert consulting for iGaming operators worldwide. Strategy, regulation, game integrity, and operational excellence across all verticals and market types.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-300: #cbd5e1;
+            --slate-400: #94a3b8; --slate-500: #64748b; --slate-600: #475569; --slate-700: #334155;
+            --slate-800: #1e293b; --slate-900: #0f172a;
+            --accent: #0c4a6e; --accent-light: #0369a1; --accent-subtle: #e0f2fe;
+            --accent-gold: #b8860b; --white: #ffffff;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+            --max-width: 1200px; --section-padding: 100px 0;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-body); color: var(--slate-800); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 32px; }
+
+        /* LANG SWITCHER */
+        .lang-switch { display: flex; align-items: center; background: var(--slate-100); border-radius: 8px; padding: 3px; gap: 2px; margin-left: 16px; }
+        .lang-btn { padding: 5px 12px; border: none; background: transparent; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--slate-500); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); letter-spacing: 0.5px; }
+        .lang-btn.active { background: var(--white); color: var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+        .lang-btn:hover:not(.active) { color: var(--slate-700); }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--slate-200); transition: all 0.3s ease; }
+        nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.06); }
+        .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--slate-900); }
+        .nav-logo-icon { width: 38px; height: 38px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+        .nav-logo-text { font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: -0.3px; }
+        .nav-logo-text span { color: var(--accent-light); }
+        .nav-right { display: flex; align-items: center; }
+        .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--slate-600); font-size: 14px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-cta { background: var(--accent) !important; color: white !important; padding: 10px 24px; border-radius: 8px; transition: background 0.2s, transform 0.2s !important; }
+        .nav-cta:hover { background: var(--accent-light) !important; transform: translateY(-1px); }
+        .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+        .nav-hamburger span { width: 24px; height: 2px; background: var(--slate-700); border-radius: 2px; transition: all 0.3s; }
+
+        /* HERO */
+        .hero { padding: 160px 0 120px; position: relative; overflow: hidden; background: linear-gradient(165deg, var(--white) 0%, var(--slate-50) 40%, var(--accent-subtle) 100%); }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px; background: radial-gradient(circle, rgba(12,74,110,0.04) 0%, transparent 70%); border-radius: 50%; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--slate-200), transparent); }
+        .hero-content { position: relative; z-index: 1; max-width: 820px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px 6px 8px; background: var(--white); border: 1px solid var(--slate-200); border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--slate-600); margin-bottom: 32px; animation: fadeInUp 0.8s ease both; }
+        .hero-badge-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .hero h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 5.5vw, 4.2rem); font-weight: 600; line-height: 1.15; color: var(--slate-900); letter-spacing: -1.5px; margin-bottom: 28px; animation: fadeInUp 0.8s 0.1s ease both; }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero-description { font-size: 1.15rem; color: var(--slate-600); line-height: 1.8; max-width: 640px; margin-bottom: 44px; animation: fadeInUp 0.8s 0.2s ease both; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeInUp 0.8s 0.3s ease both; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--accent); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 15px; transition: all 0.25s; border: none; cursor: pointer; }
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(12,74,110,0.2); }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: transparent; color: var(--slate-700); text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1.5px solid var(--slate-300); transition: all 0.25s; cursor: pointer; }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* CREDIBILITY */
+        .credibility { padding: 60px 0; border-bottom: 1px solid var(--slate-200); background: var(--white); }
+        .credibility-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+        .cred-item { position: relative; }
+        .cred-item:not(:last-child)::after { content: ''; position: absolute; right: -20px; top: 10%; height: 80%; width: 1px; background: var(--slate-200); }
+        .cred-number { font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--accent); line-height: 1.1; letter-spacing: -1px; }
+        .cred-label { font-size: 14px; color: var(--slate-500); margin-top: 6px; font-weight: 500; }
+
+        /* VERTICALS */
+        .verticals { padding: 80px 0; background: var(--slate-50); border-bottom: 1px solid var(--slate-200); }
+        .verticals-label { text-align: center; margin-bottom: 40px; }
+        .verticals-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+        .vertical-pill { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--white); border: 1px solid var(--slate-200); border-radius: 100px; font-size: 15px; font-weight: 500; color: var(--slate-700); transition: all 0.25s; }
+        .vertical-pill:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .vertical-pill .v-icon { font-size: 20px; }
+
+        /* SECTIONS */
+        .section-label { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+        .section-title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600; color: var(--slate-900); letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px; }
+        .section-subtitle { font-size: 1.05rem; color: var(--slate-500); max-width: 600px; line-height: 1.7; margin-bottom: 60px; }
+
+        /* EXPERTISE */
+        .expertise { padding: var(--section-padding); background: var(--white); }
+        .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .expertise-card { padding: 40px 32px; background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 16px; transition: all 0.35s ease; position: relative; overflow: hidden; }
+        .expertise-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; }
+        .expertise-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(12,74,110,0.08); }
+        .expertise-card:hover::before { transform: scaleX(1); }
+        .expertise-icon { width: 52px; height: 52px; background: var(--accent-subtle); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; }
+        .expertise-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--slate-900); margin-bottom: 12px; letter-spacing: -0.3px; }
+        .expertise-card p { font-size: 0.95rem; color: var(--slate-500); line-height: 1.7; }
+        .expertise-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+        .expertise-tag { padding: 4px 12px; background: var(--white); border: 1px solid var(--slate-200); border-radius: 100px; font-size: 12px; color: var(--slate-600); font-weight: 500; }
+
+        /* TRACK RECORD */
+        .track-record { padding: var(--section-padding); background: var(--slate-50); position: relative; }
+        .track-record::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--slate-200), transparent); }
+        .timeline { position: relative; margin-top: 60px; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--slate-200); transform: translateX(-50%); }
+        .timeline-item { display: flex; align-items: flex-start; margin-bottom: 48px; position: relative; }
+        .timeline-item:nth-child(odd) { flex-direction: row; }
+        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+        .timeline-content { width: 45%; padding: 32px; background: var(--white); border: 1px solid var(--slate-200); border-radius: 16px; transition: all 0.3s; }
+        .timeline-content:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); transform: translateY(-2px); }
+        .timeline-dot { position: absolute; left: 50%; top: 36px; width: 16px; height: 16px; background: var(--accent); border: 3px solid var(--white); border-radius: 50%; transform: translateX(-50%); z-index: 2; box-shadow: 0 0 0 4px var(--accent-subtle); }
+        .timeline-year { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+        .timeline-title { font-weight: 600; font-size: 1.1rem; color: var(--slate-900); margin-bottom: 8px; }
+        .timeline-desc { font-size: 0.95rem; color: var(--slate-500); line-height: 1.7; }
+
+        /* APPROACH */
+        .approach { padding: var(--section-padding); background: var(--white); }
+        .approach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; align-items: center; margin-top: 60px; }
+        .approach-step { display: flex; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--slate-100); transition: all 0.3s; }
+        .approach-step:last-child { border-bottom: none; }
+        .approach-step:hover { padding-left: 8px; }
+        .step-number { flex-shrink: 0; width: 44px; height: 44px; background: var(--accent-subtle); color: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
+        .step-content h4 { font-weight: 600; color: var(--slate-900); margin-bottom: 4px; font-size: 1.05rem; }
+        .step-content p { font-size: 0.92rem; color: var(--slate-500); line-height: 1.6; }
+        .approach-highlight { background: linear-gradient(145deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 20px; padding: 48px 40px; color: white; position: relative; overflow: hidden; }
+        .approach-highlight::before { content: ''; position: absolute; top: -40%; right: -20%; width: 300px; height: 300px; background: rgba(255,255,255,0.06); border-radius: 50%; }
+        .approach-highlight h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; margin-bottom: 20px; letter-spacing: -0.5px; }
+        .approach-highlight > p { font-size: 0.95rem; line-height: 1.8; opacity: 0.9; margin-bottom: 24px; }
+        .client-list { display: flex; flex-direction: column; gap: 16px; }
+        .client-item { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(10px); transition: background 0.2s; }
+        .client-item:hover { background: rgba(255,255,255,0.15); }
+        .client-icon { font-size: 24px; flex-shrink: 0; }
+        .client-name { font-weight: 700; font-size: 1.05rem; font-family: var(--font-display); letter-spacing: -0.3px; }
+        .client-detail { font-size: 13px; opacity: 0.75; margin-top: 2px; }
+        .client-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 4px 0; }
+        .client-markets { padding: 4px 0 0; }
+        .client-markets-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.6; margin-bottom: 12px; }
+        .client-markets-flags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .client-market-pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: rgba(255,255,255,0.1); border-radius: 100px; font-size: 14px; font-weight: 500; }
+
+        /* MARKETS */
+        .markets { padding: var(--section-padding); background: var(--slate-50); }
+        .markets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+        .market-card { padding: 36px; background: var(--white); border: 1px solid var(--slate-200); border-radius: 16px; transition: all 0.3s; }
+        .market-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+        .market-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+        .market-flag { font-size: 2rem; line-height: 1; }
+        .market-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--slate-900); }
+        .market-card p { font-size: 0.9rem; color: var(--slate-500); line-height: 1.6; }
+        .market-badge { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; margin-top: 14px; }
+        .badge-regulated { background: #dcfce7; color: #166534; }
+        .badge-emerging { background: #fef3c7; color: #92400e; }
+        .badge-transition { background: #e0f2fe; color: #075985; }
+        .badge-all { background: #f3e8ff; color: #6b21a8; }
+
+        /* CTA */
+        .cta-section { padding: 100px 0; background: var(--slate-900); position: relative; overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; top: -50%; left: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(3,105,161,0.15) 0%, transparent 70%); border-radius: 50%; }
+        .cta-section::after { content: ''; position: absolute; bottom: -30%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(184,134,11,0.1) 0%, transparent 70%); border-radius: 50%; }
+        .cta-inner { text-align: center; position: relative; z-index: 1; }
+        .cta-inner h2 { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--white); font-weight: 600; letter-spacing: -1px; margin-bottom: 16px; }
+        .cta-inner h2 em { font-style: italic; color: var(--accent-gold); }
+        .cta-inner p { color: var(--slate-400); font-size: 1.05rem; max-width: 540px; margin: 0 auto 40px; line-height: 1.7; }
+        .cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .btn-cta-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: var(--accent-gold); color: var(--white); text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 15px; transition: all 0.25s; }
+        .btn-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(184,134,11,0.3); }
+        .btn-cta-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; background: transparent; color: var(--slate-300); text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1.5px solid var(--slate-700); transition: all 0.25s; }
+        .btn-cta-secondary:hover { border-color: var(--slate-400); color: var(--white); transform: translateY(-2px); }
+
+        /* FOOTER */
+        footer { padding: 60px 0 40px; background: var(--slate-900); border-top: 1px solid rgba(255,255,255,0.06); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; }
+        .footer-brand { max-width: 340px; }
+        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .footer-logo-icon { width: 36px; height: 36px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-family: var(--font-display); font-weight: 700; font-size: 14px; }
+        .footer-logo-text { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--white); }
+        .footer-brand p { font-size: 14px; color: var(--slate-400); line-height: 1.7; }
+        .footer-links { display: flex; gap: 64px; }
+        .footer-col h4 { font-size: 13px; font-weight: 600; color: var(--slate-300); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--slate-400); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { font-size: 13px; color: var(--slate-500); }
+        .footer-socials { display: flex; gap: 16px; }
+        .footer-socials a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: var(--slate-400); text-decoration: none; font-size: 14px; transition: all 0.2s; }
+        .footer-socials a:hover { background: var(--accent); color: white; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 968px) {
+            .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+            .markets-grid { grid-template-columns: repeat(2, 1fr); }
+            .approach-grid { grid-template-columns: 1fr; gap: 40px; }
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) { flex-direction: row; padding-left: 52px; }
+            .timeline-content { width: 100%; }
+            .timeline-dot { left: 20px; }
+            .credibility-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+            .cred-item:nth-child(2)::after { display: none; }
+            .footer-inner { flex-direction: column; gap: 40px; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .hero { padding: 130px 0 80px; }
+            .expertise-grid, .markets-grid { grid-template-columns: 1fr; }
+            .credibility-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .cred-item::after { display: none; }
+            .highlight-stats { grid-template-columns: 1fr; }
+            .footer-links { flex-direction: column; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .verticals-grid { gap: 10px; }
+            .vertical-pill { padding: 10px 20px; font-size: 14px; }
+            .lang-switch { margin-left: 8px; }
+        }
+        .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--slate-200); padding: 24px 32px; z-index: 999; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 12px 0; color: var(--slate-700); text-decoration: none; font-weight: 500; font-size: 15px; border-bottom: 1px solid var(--slate-100); }
+        .mobile-menu a:last-child { border-bottom: none; color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">SL</div>
+            <div class="nav-logo-text">Serious Labs <span>Consulting</span></div>
+        </a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#expertise" data-en="Expertise" data-fr="Expertise">Expertise</a></li>
+                <li><a href="#track-record" data-en="Track Record" data-fr="Parcours">Track Record</a></li>
+                <li><a href="#approach" data-en="Approach" data-fr="Approche">Approach</a></li>
+                <li><a href="#markets" data-en="Markets" data-fr="Marchés">Markets</a></li>
+                <li><a href="#contact" class="nav-cta" data-en="Get in Touch" data-fr="Nous contacter">Get in Touch</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('fr')">FR</button>
+            </div>
+            <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#expertise" onclick="closeMobile()" data-en="Expertise" data-fr="Expertise">Expertise</a>
+    <a href="#track-record" onclick="closeMobile()" data-en="Track Record" data-fr="Parcours">Track Record</a>
+    <a href="#approach" onclick="closeMobile()" data-en="Approach" data-fr="Approche">Approach</a>
+    <a href="#markets" onclick="closeMobile()" data-en="Markets" data-fr="Marchés">Markets</a>
+    <a href="#contact" onclick="closeMobile()" data-en="Get in Touch" data-fr="Nous contacter">Get in Touch</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span data-en="Specialized iGaming Consulting" data-fr="Conseil spécialisé iGaming">Specialized iGaming Consulting</span>
+            </div>
+            <h1 data-en="Navigate the iGaming landscape with <em>confidence</em> and clarity" data-fr="Naviguer le paysage iGaming avec <em>expertise</em> et précision">Navigate the iGaming landscape with <em>confidence</em> and clarity</h1>
+            <p class="hero-description" data-en="Serious Labs helps gaming operators thrive across all market types — regulated, emerging, and transitioning. From strategic market entry to compliance frameworks, game integrity, and operational excellence across every vertical." data-fr="Serious Labs accompagne les opérateurs de jeux en ligne sur tous les types de marchés — régulés, émergents et en transition. De l'entrée sur le marché aux cadres de conformité, en passant par l'intégrité du jeu et l'excellence opérationnelle sur toutes les verticales.">Serious Labs helps gaming operators thrive across all market types — regulated, emerging, and transitioning. From strategic market entry to compliance frameworks, game integrity, and operational excellence across every vertical.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary" data-en="Let's talk about your project →" data-fr="Discutons de votre projet →">
+                    Let's talk about your project
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="#expertise" class="btn-secondary" data-en="Explore our services" data-fr="Découvrir nos services">Explore our services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CREDIBILITY -->
+<section class="credibility">
+    <div class="container">
+        <div class="credibility-grid">
+            <div class="cred-item reveal"><div class="cred-number">15+</div><div class="cred-label" data-en="Years in the iGaming industry" data-fr="Années dans l'industrie iGaming">Years in the iGaming industry</div></div>
+            <div class="cred-item reveal"><div class="cred-number">3</div><div class="cred-label" data-en="Regulated market launches" data-fr="Lancements de marchés régulés">Regulated market launches</div></div>
+            <div class="cred-item reveal"><div class="cred-number">10+</div><div class="cred-label" data-en="Jurisdictions covered" data-fr="Juridictions couvertes">Jurisdictions covered</div></div>
+            <div class="cred-item reveal"><div class="cred-number" data-en="All" data-fr="Toutes">All</div><div class="cred-label" data-en="Gaming verticals" data-fr="Les verticales gaming">Gaming verticals</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- VERTICALS -->
+<section class="verticals">
+    <div class="container">
+        <div class="verticals-label"><div class="section-label reveal" data-en="Verticals we cover" data-fr="Nos verticales">Verticals we cover</div></div>
+        <div class="verticals-grid reveal">
+            <div class="vertical-pill"><span class="v-icon">🃏</span> Poker</div>
+            <div class="vertical-pill"><span class="v-icon">🎰</span> Casino & Slots</div>
+            <div class="vertical-pill"><span class="v-icon">⚽</span> <span data-en="Sports Betting" data-fr="Paris sportifs">Sports Betting</span></div>
+            <div class="vertical-pill"><span class="v-icon">📊</span> <span data-en="Prediction Markets" data-fr="Marchés prédictifs">Prediction Markets</span></div>
+            <div class="vertical-pill"><span class="v-icon">🎲</span> <span data-en="Table Games" data-fr="Jeux de table">Table Games</span></div>
+            <div class="vertical-pill"><span class="v-icon">🏇</span> <span data-en="Horse Racing" data-fr="Courses hippiques">Horse Racing</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise" id="expertise">
+    <div class="container">
+        <div class="section-label reveal" data-en="Core expertise" data-fr="Nos domaines d'expertise">Core expertise</div>
+        <h2 class="section-title reveal" data-en="End-to-end consulting for<br>gaming operators worldwide" data-fr="Un accompagnement complet pour<br>les opérateurs de jeux dans le monde">End-to-end consulting for<br>gaming operators worldwide</h2>
+        <p class="section-subtitle reveal" data-en="Whether you operate in a fully regulated market, an emerging jurisdiction, or are navigating the path to compliance — we have you covered." data-fr="Que vous opériez sur un marché régulé, une juridiction émergente, ou que vous naviguiez vers la conformité — nous vous accompagnons.">Whether you operate in a fully regulated market, an emerging jurisdiction, or are navigating the path to compliance — we have you covered.</p>
+        <div class="expertise-grid">
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">⚖️</div>
+                <h3 data-en="Regulation & Compliance" data-fr="Régulation & Conformité">Regulation & Compliance</h3>
+                <p data-en="Licensing strategy, regulatory audits, and ongoing compliance management. We guide operators through every stage of the licensing process and help maintain adherence to evolving regulatory frameworks." data-fr="Stratégie de licensing, audits réglementaires et gestion de la conformité. Nous accompagnons les opérateurs à chaque étape du processus de licence et du maintien de la conformité aux cadres réglementaires.">Licensing strategy, regulatory audits, and ongoing compliance management. We guide operators through every stage of the licensing process and help maintain adherence to evolving regulatory frameworks.</p>
+                <div class="expertise-tags"><span class="expertise-tag">Licensing</span><span class="expertise-tag" data-en="Regulatory audits" data-fr="Audits réglementaires">Regulatory audits</span><span class="expertise-tag" data-en="Compliance frameworks" data-fr="Cadres de conformité">Compliance frameworks</span></div>
+            </div>
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">🛡️</div>
+                <h3 data-en="Game Integrity" data-fr="Intégrité du jeu">Game Integrity</h3>
+                <p data-en="Anti-cheating systems, AI-powered bot detection, collusion prevention, and fraud monitoring. We design robust integrity ecosystems that protect players and operators alike." data-fr="Systèmes anti-triche, détection de bots par IA, prévention de la collusion et surveillance de la fraude. Nous concevons des écosystèmes d'intégrité robustes qui protègent joueurs et opérateurs.">Anti-cheating systems, AI-powered bot detection, collusion prevention, and fraud monitoring. We design robust integrity ecosystems that protect players and operators alike.</p>
+                <div class="expertise-tags"><span class="expertise-tag">Anti-cheating</span><span class="expertise-tag">Bot detection</span><span class="expertise-tag" data-en="Collusion prevention" data-fr="Anti-collusion">Collusion prevention</span></div>
+            </div>
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">🎯</div>
+                <h3 data-en="Strategy & Market Entry" data-fr="Stratégie & Entrée marché">Strategy & Market Entry</h3>
+                <p data-en="Market analysis, competitive intelligence, and go-to-market strategies tailored to your target jurisdictions. Product roadmaps that align with local requirements and player expectations." data-fr="Analyse de marché, intelligence concurrentielle et stratégies go-to-market adaptées à vos juridictions cibles. Roadmaps produit alignées sur les exigences locales et les attentes des joueurs.">Market analysis, competitive intelligence, and go-to-market strategies tailored to your target jurisdictions. Product roadmaps that align with local requirements and player expectations.</p>
+                <div class="expertise-tags"><span class="expertise-tag" data-en="Market entry" data-fr="Entrée marché">Market entry</span><span class="expertise-tag">Product roadmap</span><span class="expertise-tag" data-en="Competitive analysis" data-fr="Analyse concurrentielle">Competitive analysis</span></div>
+            </div>
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">🔐</div>
+                <h3 data-en="KYC & Anti-Money Laundering" data-fr="KYC & Lutte anti-blanchiment">KYC & Anti-Money Laundering</h3>
+                <p data-en="Design and implementation of KYC processes compliant with local and international standards. AML/CFT policies, identity verification, transaction monitoring, and due diligence procedures." data-fr="Conception et mise en place de processus KYC conformes aux standards locaux et internationaux. Politiques AML/CFT, vérification d'identité, monitoring des transactions et procédures de due diligence.">Design and implementation of KYC processes compliant with local and international standards. AML/CFT policies, identity verification, transaction monitoring, and due diligence procedures.</p>
+                <div class="expertise-tags"><span class="expertise-tag">KYC</span><span class="expertise-tag">AML / CFT</span><span class="expertise-tag">Due diligence</span></div>
+            </div>
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">🤝</div>
+                <h3 data-en="Responsible Gaming" data-fr="Jeu responsable">Responsible Gaming</h3>
+                <p data-en="Comprehensive responsible gaming programs: deposit limits, self-exclusion mechanisms, at-risk behavior detection, staff training, and regulatory reporting frameworks." data-fr="Programmes de jeu responsable complets : limites de dépôt, mécanismes d'auto-exclusion, détection des comportements à risque, formation des équipes et cadres de reporting réglementaire.">Comprehensive responsible gaming programs: deposit limits, self-exclusion mechanisms, at-risk behavior detection, staff training, and regulatory reporting frameworks.</p>
+                <div class="expertise-tags"><span class="expertise-tag" data-en="Player protection" data-fr="Protection des joueurs">Player protection</span><span class="expertise-tag" data-en="Self-exclusion" data-fr="Auto-exclusion">Self-exclusion</span><span class="expertise-tag" data-en="Risk detection" data-fr="Détection des risques">Risk detection</span></div>
+            </div>
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">📈</div>
+                <h3 data-en="Monetization & Game Economy" data-fr="Monétisation & Économie de jeu">Monetization & Game Economy</h3>
+                <p data-en="Revenue optimization across all verticals — rake structures, tournament design, loyalty programs, bonus economics, and margin calibration that maximizes yield while preserving a healthy player ecosystem." data-fr="Optimisation des revenus sur toutes les verticales — structures de rake, design de tournois, programmes de fidélité, économie des bonus et calibration des marges pour maximiser le rendement tout en préservant un écosystème joueurs sain.">Revenue optimization across all verticals — rake structures, tournament design, loyalty programs, bonus economics, and margin calibration that maximizes yield while preserving a healthy player ecosystem.</p>
+                <div class="expertise-tags"><span class="expertise-tag" data-en="Revenue optimization" data-fr="Optimisation revenus">Revenue optimization</span><span class="expertise-tag" data-en="Loyalty programs" data-fr="Fidélisation">Loyalty programs</span><span class="expertise-tag" data-en="Bonus economics" data-fr="Économie des bonus">Bonus economics</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="track-record" id="track-record">
+    <div class="container">
+        <div class="section-label reveal" data-en="Track record" data-fr="Parcours">Track record</div>
+        <h2 class="section-title reveal" data-en="15+ years at the heart of<br>the iGaming industry" data-fr="Plus de 15 ans au cœur de<br>l'industrie du iGaming">15+ years at the heart of<br>the iGaming industry</h2>
+        <p class="section-subtitle reveal" data-en="From historic regulated market launches to platform transformations, hands-on experience that makes the difference." data-fr="Des lancements historiques de marchés régulés aux transformations technologiques, une expérience terrain qui fait la différence.">From historic regulated market launches to platform transformations, hands-on experience that makes the difference.</p>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-title" data-en="PokerStars France Launch" data-fr="Lancement PokerStars France">PokerStars France Launch</div>
+                    <div class="timeline-desc" data-en="Core team member for the launch of PokerStars on the French market — one of Europe's first regulated online poker markets under the ARJEL framework." data-fr="Membre de l'équipe fondatrice pour le lancement de PokerStars sur le marché français — l'un des premiers marchés de poker en ligne régulés en Europe sous le cadre ARJEL.">Core team member for the launch of PokerStars on the French market — one of Europe's first regulated online poker markets under the ARJEL framework.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-title" data-en="Spanish Market Entry" data-fr="Ouverture du marché espagnol">Spanish Market Entry</div>
+                    <div class="timeline-desc" data-en="Deployment of PokerStars in Spain. Adaptation to local regulatory requirements and development of market-specific launch strategies for the Iberian market." data-fr="Déploiement de PokerStars en Espagne. Adaptation aux exigences réglementaires locales et développement de stratégies de lancement spécifiques au marché ibérique.">Deployment of PokerStars in Spain. Adaptation to local regulatory requirements and development of market-specific launch strategies for the Iberian market.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-title" data-en="Betclic Poker Internalization" data-fr="Internalisation poker Betclic">Betclic Poker Internalization</div>
+                    <div class="timeline-desc" data-en="Strategic advisory for Betclic's migration to a proprietary poker platform, delivering significant revenue improvements and enhanced player experience." data-fr="Conseil stratégique pour la migration de Betclic vers une plateforme poker propriétaire, avec des améliorations significatives des revenus et de l'expérience joueur.">Strategic advisory for Betclic's migration to a proprietary poker platform, delivering significant revenue improvements and enhanced player experience.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-title" data-en="African Market Expansion" data-fr="Expansion marchés africains">African Market Expansion</div>
+                    <div class="timeline-desc" data-en="Developing new opportunities in emerging African gaming markets. Regulatory analysis, compliance strategy, and operator positioning across multiple jurisdictions." data-fr="Développement de nouvelles opportunités sur les marchés africains émergents. Analyse réglementaire, stratégie de conformité et positionnement d'opérateurs sur plusieurs juridictions.">Developing new opportunities in emerging African gaming markets. Regulatory analysis, compliance strategy, and operator positioning across multiple jurisdictions.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+    <div class="container">
+        <div class="section-label reveal" data-en="Our approach" data-fr="Notre approche">Our approach</div>
+        <h2 class="section-title reveal" data-en="From assessment to launch,<br>a proven methodology" data-fr="De l'analyse au lancement,<br>une méthodologie éprouvée">From assessment to launch,<br>a proven methodology</h2>
+        <p class="section-subtitle reveal" data-en="Every engagement follows a rigorous framework, adapted to your specific market context and business objectives." data-fr="Chaque mission suit un cadre méthodologique rigoureux, adapté aux spécificités de votre marché et de vos objectifs.">Every engagement follows a rigorous framework, adapted to your specific market context and business objectives.</p>
+        <div class="approach-grid">
+            <div class="approach-steps reveal">
+                <div class="approach-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h4 data-en="Assessment & Regulatory Analysis" data-fr="Diagnostic & Analyse réglementaire">Assessment & Regulatory Analysis</h4>
+                        <p data-en="Comprehensive audit of the regulatory environment, risk mapping, and identification of compliance requirements and market opportunities." data-fr="Audit complet de l'environnement réglementaire, cartographie des risques et identification des exigences de conformité et des opportunités de marché.">Comprehensive audit of the regulatory environment, risk mapping, and identification of compliance requirements and market opportunities.</p>
+                    </div>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h4 data-en="Strategy & Roadmap" data-fr="Stratégie & Roadmap">Strategy & Roadmap</h4>
+                        <p data-en="Market positioning, detailed action plan, and implementation timeline. Prioritization of critical workstreams aligned with your business goals." data-fr="Positionnement marché, plan d'action détaillé et calendrier de mise en œuvre. Priorisation des chantiers critiques alignés sur vos objectifs business.">Market positioning, detailed action plan, and implementation timeline. Prioritization of critical workstreams aligned with your business goals.</p>
+                    </div>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h4 data-en="Implementation & Compliance" data-fr="Implémentation & Conformité">Implementation & Compliance</h4>
+                        <p data-en="Hands-on operational support for deploying the required systems and processes — KYC, AML, responsible gaming, game integrity, and licensing." data-fr="Accompagnement opérationnel dans la mise en place des systèmes et processus requis — KYC, AML, jeu responsable, intégrité du jeu et licensing.">Hands-on operational support for deploying the required systems and processes — KYC, AML, responsible gaming, game integrity, and licensing.</p>
+                    </div>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h4 data-en="Launch & Optimization" data-fr="Lancement & Optimisation">Launch & Optimization</h4>
+                        <p data-en="Go-live support, KPI monitoring, and continuous adjustments to maximize performance within the regulatory framework." data-fr="Support au go-live, suivi des KPIs et ajustements continus pour maximiser la performance dans le cadre réglementaire.">Go-live support, KPI monitoring, and continuous adjustments to maximize performance within the regulatory framework.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="approach-highlight reveal">
+                <h3 data-en="They trusted us" data-fr="Ils nous ont fait confiance">They trusted us</h3>
+                <p data-en="We've worked with leading operators and across key regulated and emerging markets worldwide." data-fr="Nous avons accompagné des opérateurs majeurs et travaillé sur des marchés régulés et émergents à travers le monde.">We've worked with leading operators and across key regulated and emerging markets worldwide.</p>
+                <div class="client-list">
+                    <div class="client-item">
+                        <div class="client-icon">🃏</div>
+                        <div>
+                            <div class="client-name">PokerStars.fr</div>
+                            <div class="client-detail" data-en="French regulated market launch (2010)" data-fr="Lancement marché régulé français (2010)">French regulated market launch (2010)</div>
+                        </div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-icon">🃏</div>
+                        <div>
+                            <div class="client-name">PokerStars.es</div>
+                            <div class="client-detail" data-en="Spanish market entry (2013)" data-fr="Entrée sur le marché espagnol (2013)">Spanish market entry (2013)</div>
+                        </div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-icon">⚡</div>
+                        <div>
+                            <div class="client-name">Betclic</div>
+                            <div class="client-detail" data-en="Poker platform internalization (2024)" data-fr="Internalisation plateforme poker (2024)">Poker platform internalization (2024)</div>
+                        </div>
+                    </div>
+                    <div class="client-divider"></div>
+                    <div class="client-markets">
+                        <div class="client-markets-label" data-en="Markets covered" data-fr="Marchés couverts">Markets covered</div>
+                        <div class="client-markets-flags">
+                            <span class="client-market-pill">🇮🇳 <span data-en="India" data-fr="Inde">India</span></span>
+                            <span class="client-market-pill">🇵🇹 Portugal</span>
+                            <span class="client-market-pill">🇧🇷 <span data-en="Brazil" data-fr="Brésil">Brazil</span></span>
+                            <span class="client-market-pill">🇲🇦 <span data-en="Morocco" data-fr="Maroc">Morocco</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MARKETS -->
+<section class="markets" id="markets">
+    <div class="container">
+        <div class="section-label reveal" data-en="Markets & Jurisdictions" data-fr="Marchés & Juridictions">Markets & Jurisdictions</div>
+        <h2 class="section-title reveal" data-en="Global reach, local expertise" data-fr="Portée mondiale, expertise locale">Global reach, local expertise</h2>
+        <p class="section-subtitle reveal" data-en="We work with operators across all market types — from mature regulated frameworks to emerging jurisdictions and grey-zone transitions." data-fr="Nous travaillons avec des opérateurs sur tous les types de marchés — des cadres régulés matures aux juridictions émergentes et aux transitions depuis les zones grises.">We work with operators across all market types — from mature regulated frameworks to emerging jurisdictions and grey-zone transitions.</p>
+        <div class="markets-grid">
+            <div class="market-card reveal">
+                <div class="market-header"><div class="market-flag">🇫🇷</div><h3>France</h3></div>
+                <p data-en="Deep expertise in the French regulated market overseen by the ANJ. Full understanding of the legal framework, operator obligations, and ongoing regulatory evolution." data-fr="Expertise approfondie du marché français régulé par l'ANJ. Connaissance complète du cadre légal, des obligations opérateurs et des évolutions réglementaires.">Deep expertise in the French regulated market overseen by the ANJ. Full understanding of the legal framework, operator obligations, and ongoing regulatory evolution.</p>
+                <span class="market-badge badge-regulated" data-en="Regulated" data-fr="Régulé">Regulated</span>
+            </div>
+            <div class="market-card reveal">
+                <div class="market-header"><div class="market-flag">🇪🇸</div><h3 data-en="Spain" data-fr="Espagne">Spain</h3></div>
+                <p data-en="Direct experience launching in the Spanish market. Mastery of Iberian regulatory specifics and shared liquidity mechanisms across Southern European markets." data-fr="Expérience directe du lancement sur le marché espagnol. Maîtrise des spécificités réglementaires ibériques et des mécanismes de liquidité partagée.">Direct experience launching in the Spanish market. Mastery of Iberian regulatory specifics and shared liquidity mechanisms across Southern European markets.</p>
+                <span class="market-badge badge-regulated" data-en="Regulated" data-fr="Régulé">Regulated</span>
+            </div>
+            <div class="market-card reveal">
+                <div class="market-header"><div class="market-flag">🇵🇹</div><h3>Portugal</h3></div>
+                <p data-en="Knowledge of the SRIJ framework and shared liquidity agreements with Spain and France. Monitoring of fiscal and regulatory developments." data-fr="Connaissance du cadre SRIJ et des accords de liquidité partagée avec l'Espagne et la France. Suivi des évolutions fiscales et réglementaires.">Knowledge of the SRIJ framework and shared liquidity agreements with Spain and France. Monitoring of fiscal and regulatory developments.</p>
+                <span class="market-badge badge-regulated" data-en="Regulated" data-fr="Régulé">Regulated</span>
+            </div>
+            <div class="market-card reveal">
+                <div class="market-header"><div class="market-flag">🌍</div><h3 data-en="Africa" data-fr="Afrique">Africa</h3></div>
+                <p data-en="Analysis of high-growth opportunities in African gaming markets. Operator guidance on regulatory positioning, licensing pathways, and compliance strategies." data-fr="Analyse des opportunités de forte croissance sur les marchés africains du gaming. Accompagnement des opérateurs sur le positionnement réglementaire, les parcours de licence et les stratégies de conformité.">Analysis of high-growth opportunities in African gaming markets. Operator guidance on regulatory positioning, licensing pathways, and compliance strategies.</p>
+                <span class="market-badge badge-emerging" data-en="Emerging" data-fr="Émergent">Emerging</span>
+            </div>
+            <div class="market-card reveal">
+                <div class="market-header"><div class="market-flag">🔄</div><h3 data-en="Grey-to-Regulated Transitions" data-fr="Transitions zone grise → régulé">Grey-to-Regulated Transitions</h3></div>
+                <p data-en="Specialized advisory for operators in unregulated or grey-zone markets seeking a compliance pathway. Risk analysis, transition roadmaps, and regulatory engagement strategy." data-fr="Conseil spécialisé pour les opérateurs en zone grise ou non régulée cherchant un parcours de mise en conformité. Analyse de risques, feuilles de route de transition et stratégie d'engagement réglementaire.">Specialized advisory for operators in unregulated or grey-zone markets seeking a compliance pathway. Risk analysis, transition roadmaps, and regulatory engagement strategy.</p>
+                <span class="market-badge badge-transition" data-en="In transition" data-fr="En transition">In transition</span>
+            </div>
+            <div class="market-card reveal">
+                <div class="market-header"><div class="market-flag">🌐</div><h3 data-en="International Expansion" data-fr="Expansion internationale">International Expansion</h3></div>
+                <p data-en="Multi-jurisdictional strategy for operators looking to scale across borders. Comparative regulatory analysis and market prioritization for all market types." data-fr="Stratégie multi-juridictionnelle pour les opérateurs souhaitant se développer au-delà des frontières. Analyse réglementaire comparative et priorisation des marchés pour tous les types de marchés.">Multi-jurisdictional strategy for operators looking to scale across borders. Comparative regulatory analysis and market prioritization for all market types.</p>
+                <span class="market-badge badge-all" data-en="All market types" data-fr="Tous types de marchés">All market types</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+    <div class="container">
+        <div class="cta-inner reveal">
+            <h2 data-en="Ready to shape your<br>next <em>move</em>?" data-fr="Prêt à façonner votre<br>prochain <em>coup</em> ?">Ready to shape your<br>next <em>move</em>?</h2>
+            <p data-en="Whether you're entering a new market, optimizing your operations, or building a compliance strategy from scratch — let's talk." data-fr="Que vous entriez sur un nouveau marché, optimisiez vos opérations, ou construisiez une stratégie de conformité de zéro — parlons-en.">Whether you're entering a new market, optimizing your operations, or building a compliance strategy from scratch — let's talk.</p>
+            <div class="cta-actions">
+                <a href="mailto:antoinedugast75@gmail.com" class="btn-cta-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    antoinedugast75@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/antoine-dugast-8a394188/" target="_blank" class="btn-cta-secondary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">SL</div>
+                    <div class="footer-logo-text">Serious Labs Consulting</div>
+                </div>
+                <p data-en="Strategic and operational consulting for gaming operators worldwide. From regulated markets to emerging jurisdictions, across every gaming vertical." data-fr="Conseil stratégique et opérationnel pour les opérateurs de jeux dans le monde entier. Des marchés régulés aux juridictions émergentes, sur toutes les verticales gaming.">Strategic and operational consulting for gaming operators worldwide. From regulated markets to emerging jurisdictions, across every gaming vertical.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Expertise</h4>
+                    <ul>
+                        <li><a href="#expertise" data-en="Regulation & Compliance" data-fr="Régulation & Conformité">Regulation & Compliance</a></li>
+                        <li><a href="#expertise" data-en="Game Integrity" data-fr="Intégrité du jeu">Game Integrity</a></li>
+                        <li><a href="#expertise">KYC & AML</a></li>
+                        <li><a href="#expertise" data-en="Responsible Gaming" data-fr="Jeu responsable">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-en="Company" data-fr="Entreprise">Company</h4>
+                    <ul>
+                        <li><a href="#track-record" data-en="Track Record" data-fr="Parcours">Track Record</a></li>
+                        <li><a href="#approach" data-en="Our Approach" data-fr="Notre approche">Our Approach</a></li>
+                        <li><a href="#markets" data-en="Markets" data-fr="Marchés">Markets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-en="© 2025 Serious Labs Consulting. All rights reserved." data-fr="© 2025 Serious Labs Consulting. Tous droits réservés.">© 2025 Serious Labs Consulting. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/antoine-dugast-8a394188/" target="_blank" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Language switcher
+    let currentLang = 'en';
+
+    function setLang(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+
+        // Update switcher buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
+        });
+
+        // Update all translatable elements
+        document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+            const text = el.getAttribute('data-' + lang);
+            if (text) el.innerHTML = text;
+        });
+
+        // Update page title
+        document.title = lang === 'fr'
+            ? 'Serious Labs Consulting — Stratégie & Conformité iGaming'
+            : 'Serious Labs Consulting — iGaming Strategy & Compliance';
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+
+    // Mobile menu
+    function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('active'); }
+    function closeMobile() { document.getElementById('mobileMenu').classList.remove('active'); }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Auto-detect browser language
+    if (navigator.language && navigator.language.startsWith('fr')) {
+        setLang('fr');
+    }
+</script>
+</body>
+</html>
