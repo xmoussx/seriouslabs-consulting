@@ -1,0 +1,408 @@
+/* ==========================================================================
+   Serious Labs Consulting — le marché en chiffres
+
+   La même famille que seriouslabs.tech : acier émaillé, laiton, capitales
+   condensées frappées, filets de registre. La page s'ouvre sur un tableau de
+   bord du marché français tiré des données ouvertes de l'ANJ : la preuve
+   qu'on connaît ce marché vient avant ce qu'on en dit.
+   ========================================================================== */
+
+:root {
+  --steel:   #1b1e22;
+  --steel-2: #23272c;
+  --steel-0: #131518;
+  --rule:    #353b42;
+  --ink:     #eef0f2;
+  --ink-2:   #aab2ba;
+  --brass:   #d4a64a;
+  --brass-2: #e7c37a;
+  --rouge:   #c4382a;
+  --teal:    #2aa9be;
+
+  /* Les trois segments du graphique, validés sur l'acier : bande de
+     luminosité, saturation, écart en vision normale et daltonienne. */
+  --s-ps: #bb8a2e;  /* paris sportifs */
+  --s-po: #1f9db3;  /* poker */
+  --s-ph: #cf4e3c;  /* paris hippiques */
+
+  --disp: 'Big Shoulders', 'Arial Narrow', sans-serif;
+  --sten: 'Big Shoulders Stencil', 'Big Shoulders', sans-serif;
+  --text: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+
+  --gut: clamp(1rem, 4vw, 2.5rem);
+  --band: clamp(4rem, 9vw, 7rem);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
+
+/* ------------------------------------------------------------- socle -- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  color-scheme: dark;
+  scrollbar-color: var(--rule) var(--steel-0);
+}
+
+body {
+  margin: 0;
+  background: var(--steel);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--text);
+  text-rendering: optimizeLegibility;
+  caret-color: var(--brass);
+}
+
+::selection { background: var(--brass); color: var(--steel); }
+
+h1, h2, h3, p, ul, ol, dl, dd, figure, table { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; }
+
+a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; text-decoration-color: var(--brass); }
+a:hover { color: var(--brass-2); }
+:focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+
+.wrap { width: min(100% - 2 * var(--gut), 78rem); margin-inline: auto; }
+.typed { font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.nobr { white-space: nowrap; }
+.ico { display: inline-block; width: 1em; height: 1em; margin-left: .3em; vertical-align: -.1em; }
+
+.skip, .pot {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.skip:focus {
+  width: auto; height: auto;
+  clip-path: none;
+  top: .75rem; left: .75rem;
+  z-index: 20;
+  padding: .75rem 1rem;
+  background: var(--brass);
+  color: var(--steel);
+  font-weight: 700;
+}
+
+section { padding-block: var(--band); border-top: 1px solid var(--rule); }
+
+h1, .sect-h {
+  font-family: var(--disp);
+  font-weight: 900;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.sect-h { font-size: clamp(2.3rem, 5.4vw, 3.9rem); line-height: .96; }
+.sect-h--sm { font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+.sect-l { max-width: 60ch; margin-top: 1.1rem; color: var(--ink-2); font-size: 1.125rem; }
+
+.sten { font-family: var(--sten); font-weight: 800; letter-spacing: .02em; }
+
+/* --------------------------------------------------------- les actions -- */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: .75rem 1.4rem;
+  border: 0;
+  background: var(--brass);
+  color: var(--steel);
+  font: 700 1rem/1.2 var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s var(--ease);
+}
+.cta:hover { background: var(--brass-2); color: var(--steel); }
+.cta--sm { min-height: 2.75rem; padding: .55rem 1rem; font-size: .9375rem; }
+.cta:disabled { opacity: .6; cursor: progress; }
+
+/* ------------------------------------------------------------- entête -- */
+
+.head {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgb(27 30 34 / .94);
+  border-bottom: 1px solid var(--rule);
+}
+@supports (backdrop-filter: blur(1px)) {
+  .head { background: rgb(27 30 34 / .82); backdrop-filter: blur(10px) saturate(1.2); }
+}
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
+
+.mark { display: inline-flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; }
+.mark:hover { color: var(--ink); }
+/* Le tracé du logo porte sa couleur en dur : on l'inverse sur l'acier. */
+.mark img { filter: invert(1); }
+.mark span { font: 900 1.35rem/1 var(--disp); text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+.mark em { font-style: normal; color: var(--brass); }
+
+.nav { display: flex; align-items: center; gap: clamp(.5rem, 2vw, 1.75rem); }
+.nav .sect, .nav .lang {
+  display: inline-flex; align-items: center;
+  min-height: 2.75rem;
+  color: var(--ink-2);
+  font-size: .9375rem;
+  text-decoration: none;
+}
+.nav .sect:hover, .nav .lang:hover { color: var(--ink); }
+@media (max-width: 760px) { .nav .sect { display: none; } }
+/* Sur petit téléphone, « Consulting » reste : c'est lui qui distingue ce
+   site de seriouslabs.tech. Le mot-symbole rétrécit plutôt. */
+@media (max-width: 26rem) { .mark span { font-size: 1.1rem; letter-spacing: .02em; } }
+
+/* ==================================================== le tableau == */
+
+.open { padding-block: clamp(1.5rem, 4vw, 2.75rem) var(--band); border-top: 0; }
+
+.board {
+  display: grid;
+  gap: 1.5rem 3rem;
+  padding: clamp(1.1rem, 3vw, 2rem);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--brass);
+  background: var(--steel-2);
+}
+@media (min-width: 64rem) {
+  .board { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "head head" "figs chart" "src src"; }
+  .board__head { grid-area: head; }
+  .figs { grid-area: figs; }
+  .chart { grid-area: chart; }
+  .board__src { grid-area: src; }
+}
+
+.board__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.board__t { font: 900 clamp(1.15rem, 2.2vw, 1.5rem)/1.1 var(--disp); text-transform: uppercase; letter-spacing: .03em; }
+.board__y { color: var(--brass); font: 900 clamp(2rem, 4vw, 2.75rem)/1 var(--disp); font-variant-numeric: tabular-nums; }
+
+.figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 1.75rem 1.5rem; }
+.fig { padding-top: .7rem; border-top: 1px solid var(--rule); }
+.fig dt { color: var(--ink-2); font-size: .8125rem; line-height: 1.3; }
+.fig__n {
+  display: block;
+  margin-top: .3rem;
+  /* Big Shoulders plein et non pochoir : au pochoir, le « € » se lisait « E ». */
+  font: 900 clamp(2rem, 4.2vw, 3.1rem)/1 var(--disp);
+  letter-spacing: .01em;
+  font-variant-numeric: tabular-nums;
+}
+.fig__s { display: block; margin-top: .35rem; color: var(--ink-2); font-size: .8125rem; }
+
+.chart__t { color: var(--ink-2); font-size: .8125rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .3rem 1.25rem; margin-top: .5rem; font-size: .8125rem; }
+.legend li { display: inline-flex; align-items: center; gap: .45rem; }
+.sw { width: .7rem; height: .7rem; border-radius: 2px; }
+.sw.s-ps { background: var(--s-ps); }
+.sw.s-po { background: var(--s-po); }
+.sw.s-ph { background: var(--s-ph); }
+
+.chart__plot { position: relative; margin-top: .9rem; padding-bottom: 1.6rem; }
+/* Le SVG s'étire à cette hauteur ; les textes sont en HTML, à taille fixe. */
+.chart__svg { width: 100%; height: clamp(10rem, 24vw, 15rem); }
+.chart__grid { stroke: var(--rule); stroke-width: 1; }
+.chart__svg .s-ps { fill: var(--s-ps); }
+.chart__svg .s-po { fill: var(--s-po); }
+.chart__svg .s-ph { fill: var(--s-ph); }
+.chart__hit { fill: transparent; cursor: pointer; }
+.chart__bar.is-hover rect:not(.chart__hit) { filter: brightness(1.15); }
+
+/* Graduations : 1, 2 et 3 milliards sur une échelle de 0 à 3. */
+.chart__axis { position: absolute; left: 0; color: var(--ink-2); font-size: .75rem; line-height: 1; }
+.chart__axis--3 { top: .15rem; }
+.chart__axis--2 { top: calc((100% - 1.6rem) / 3 + .15rem); }
+.chart__axis--1 { top: calc((100% - 1.6rem) * 2 / 3 + .15rem); }
+
+.chart__years { position: absolute; inset: auto 0 0; display: flex; }
+.chart__years li {
+  flex: 1;
+  min-width: 0;  /* sinon le millésime en nowrap élargit la rangée */
+  padding-top: .45rem;
+  color: transparent;
+  font-size: .75rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.chart__years li.is-tick { color: var(--ink-2); }
+/* Aux extrémités, le millésime s'aligne sur le bord pour ne pas déborder. */
+.chart__years li:first-child { text-align: left; }
+.chart__years li:last-child { text-align: right; direction: rtl; }  /* sinon le millésime gras déborde à droite */
+.chart__years li.is-near:not(.is-sel):not(.is-hover) { color: transparent; }
+/* L'année choisie : un trait d'encre sous sa barre, son millésime en encre. */
+.chart__years li.is-sel, .chart__years li.is-hover { position: relative; color: var(--ink); font-weight: 700; }
+.chart__years li.is-sel::before, .chart__years li.is-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0 18% auto;
+  height: 3px;
+  background: var(--ink);
+}
+.chart__years li.is-hover::before { height: 1px; }
+@media (max-width: 40rem) { .chart__years li:not(.is-sel):not(.is-hover) { font-size: .6875rem; } }
+
+.readout { margin-top: .6rem; font-size: .875rem; font-variant-numeric: tabular-nums; }
+
+.scrub { display: none; align-items: center; gap: 1rem; margin-top: .5rem; font-size: .8125rem; color: var(--ink-2); }
+.is-live .scrub { display: flex; }
+.scrub input { flex: 1; min-height: 2.75rem; accent-color: var(--brass); }
+
+.data { margin-top: .5rem; font-size: .8125rem; }
+.data summary { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--ink-2); cursor: pointer; text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: .22em; }
+.data__t { width: 100%; margin-top: .5rem; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.data__t caption { padding-bottom: .4rem; color: var(--ink-2); text-align: left; }
+.data__t th, .data__t td { padding: .3rem .5rem .3rem 0; border-bottom: 1px solid var(--rule); text-align: right; }
+.data__t th:first-child { text-align: left; }
+.data__t thead th { color: var(--ink-2); font-weight: 700; }
+
+.board__src { color: var(--ink-2); font-size: .8125rem; }
+.board__src a { white-space: nowrap; }
+
+/* L'ouverture : le titre et ce qu'on fait. */
+.open__text { display: grid; gap: 1.5rem 3rem; margin-top: clamp(2rem, 5vw, 3.5rem); }
+@media (min-width: 64rem) { .open__text { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); align-items: start; } }
+.open__text h1 { font-size: clamp(2.8rem, 6.6vw, 5rem); line-height: 1.02; }
+.lede { margin-bottom: 1.5rem; color: var(--ink-2); font-size: 1.125rem; }
+
+/* ===================================================== les services == */
+
+.svc__list { display: grid; margin-top: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--rule); }
+@media (min-width: 52rem) { .svc__list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; } }
+
+.svc__item {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  column-gap: 1.25rem;
+  padding-block: 1.6rem;
+  border-top: 1px solid var(--rule);
+}
+.svc__item > :not(.picto) { grid-column: 2; }
+.picto {
+  grid-row: 1 / span 3;
+  width: 3rem;
+  height: 3rem;
+  padding: .5rem;
+  border: 1px solid var(--rule);
+  color: var(--brass);
+}
+.svc__item h3 { font: 900 1.5rem/1.05 var(--disp); text-transform: uppercase; }
+.svc__item p { margin-top: .45rem; color: var(--ink-2); font-size: .9375rem; }
+.svc__item .tags { margin-top: .6rem; color: var(--ink); font-size: .8125rem; }
+
+/* ===================================================== les missions == */
+
+.entries { margin-top: clamp(2rem, 4vw, 3rem); border-top: 2px solid var(--brass); }
+.entry {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr) 12rem;
+  gap: .4rem 1.5rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.entry__date { color: var(--brass); font: 900 2rem/1 var(--disp); font-variant-numeric: tabular-nums; }
+.entry__name { font: 900 1.6rem/1.05 var(--disp); text-transform: uppercase; }
+.entry__body p { max-width: 64ch; margin-top: .4rem; color: var(--ink-2); }
+.entry__kind { padding-top: .35rem; color: var(--ink-2); font-size: .8125rem; text-align: right; }
+@media (max-width: 40rem) {
+  .entry { grid-template-columns: 1fr auto; }
+  .entry__body { grid-column: 1 / -1; grid-row: 2; }
+  .entry__kind { align-self: center; }
+}
+
+/* ====================================================== les marchés == */
+
+.mkt__t { width: 100%; margin-top: clamp(2rem, 4vw, 3rem); border-collapse: collapse; }
+.mkt__t th, .mkt__t td { padding: 1rem 1.5rem 1rem 0; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+.mkt__t thead th { padding-block: .5rem; border-bottom: 2px solid var(--brass); color: var(--ink-2); font-size: .8125rem; font-weight: 700; }
+.mkt__t tbody th { font: 900 1.35rem/1.1 var(--disp); text-transform: uppercase; white-space: nowrap; }
+.mkt__t td { color: var(--ink-2); font-size: .9375rem; }
+.mkt__t td:nth-child(2) { white-space: nowrap; }
+
+.st { display: inline-block; padding: .15rem .55rem; border: 1px solid var(--rule); color: var(--ink); font-size: .8125rem; }
+.st--reg { border-color: var(--brass); color: var(--brass-2); }
+.st--new { border-color: var(--teal); color: var(--teal); }
+.st--move { border-style: dashed; }
+
+@media (max-width: 40rem) {
+  .mkt__t thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .mkt__t tr { display: grid; grid-template-columns: 1fr auto; gap: .5rem 1rem; padding-block: 1rem; border-bottom: 1px solid var(--rule); }
+  .mkt__t th, .mkt__t td { padding: 0; border: 0; }
+  .mkt__t td:last-child { grid-column: 1 / -1; }
+}
+
+/* =================================================== la recherche == */
+
+.res { padding-block: clamp(3rem, 7vw, 5rem); }
+.res__list { display: grid; gap: 1.5rem 3rem; margin-top: 2rem; }
+@media (min-width: 52rem) { .res__list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.res__list li { padding-top: 1rem; border-top: 1px solid var(--rule); }
+.res__list a { font-weight: 700; font-size: 1.0625rem; }
+.res__list p { margin-top: .4rem; color: var(--ink-2); font-size: .9375rem; }
+
+/* ======================================================= la demande == */
+
+.ask { background: var(--steel-2); }
+.ask__grid { display: grid; gap: 2.5rem 4rem; }
+@media (min-width: 64rem) { .ask__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+.ask__alt { margin-top: 1.5rem; }
+
+.form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1rem; align-content: start; }
+.f--wide { grid-column: 1 / -1; }
+@media (max-width: 30rem) { .f { grid-column: 1 / -1; } }
+
+.form label { display: block; font-size: .9375rem; font-weight: 700; }
+.req { color: var(--brass); }
+.form input, .form textarea {
+  width: 100%;
+  min-height: 3rem;
+  margin-top: .4rem;
+  padding: .7rem .8rem;
+  border: 1px solid var(--rule);
+  border-bottom: 2px solid #737b84;  /* 3,5:1 sur la tôle : la limite du champ se voit */
+  border-radius: 0;
+  background: var(--steel);
+  color: var(--ink);
+  font: inherit;
+}
+.form textarea { min-height: 9rem; resize: vertical; line-height: 1.55; }
+.form ::placeholder { color: #8d959d; }
+.form input:not([type='checkbox']):focus-visible, .form textarea:focus-visible { outline: none; border-bottom-color: var(--brass); background: #202428; }
+.form [aria-invalid='true'] { border-bottom-color: var(--rouge); border-bottom-style: dashed; }
+.form[hidden] { display: none; }
+.f__err { margin-top: .35rem; color: #f0a49b; font-size: .8125rem; font-weight: 700; }
+.f__err::before { content: '! ' / ''; }
+.f__hint { margin-top: .4rem; color: var(--ink-2); font-size: .8125rem; }
+
+.form .consent { display: flex; gap: .75rem; align-items: flex-start; cursor: pointer; }
+.form .consent input { width: 1.25rem; height: 1.25rem; min-height: 0; margin-top: .2rem; flex: 0 0 auto; accent-color: var(--brass); }
+.form .consent span { font-weight: 400; font-size: .9375rem; color: var(--ink-2); }
+
+.reply { padding: .9rem 1rem; border-top: 2px solid var(--rouge); background: var(--steel); }
+.reply--ok { border-top-color: var(--brass); }
+.reply[hidden] { display: none; }
+
+/* ===================================================== pied de page == */
+
+.foot { padding-block: 3rem 2rem; background: var(--steel-0); color: var(--ink-2); font-size: .9375rem; }
+.foot__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.foot__links { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+.foot__links a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }
+.foot__links a:hover { color: var(--ink); }
+.foot__bar { display: grid; gap: .4rem; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); font-size: .875rem; }
+
+/* ================================================== mouvement réduit == */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+}
+
+/* ======================================================= page absente == */
+
+.lost { padding-block: 4rem; }
+.lost h1 { margin-top: 3rem; font-size: clamp(2.8rem, 8vw, 5rem); line-height: 1; }

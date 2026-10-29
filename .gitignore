@@ -1,0 +1,6 @@
+# Jamais versionné : ce dépôt est public.
+.env
+*.env
+
+# Captures de relecture.
+.impeccable/review/

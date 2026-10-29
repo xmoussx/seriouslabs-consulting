@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!-- Pictogrammes des services, dans la grammaire des poinçons de
+     seriouslabs.tech : grille de 48, trait 2,4, bouts ronds. Attributs de
+     présentation plutôt que <style> : la politique de sécurité du site refuse
+     les styles en ligne. -->
+<symbol id="licence" viewBox="0 0 48 48">
+  <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 6h18l8 8v28H12z"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M30 6v8h8M18 20h14M18 26h10"/>
+  <circle fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" cx="30" cy="34" r="4.5"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M27 38l-1.5 5 4.5-2 4.5 2-1.5-5"/>
+</symbol>
+<symbol id="integrite" viewBox="0 0 48 48">
+  <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M24 6l15 6v11c0 9-6.5 16-15 19-8.5-3-15-10-15-19V12z"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M17 24l5 5 9-10"/>
+</symbol>
+<symbol id="strategie" viewBox="0 0 48 48">
+  <circle fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" cx="24" cy="24" r="17"/><circle fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" cx="24" cy="24" r="9"/><circle fill="currentColor" cx="24" cy="24" r="2.6"/>
+  <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M24 4v6M24 38v6M4 24h6M38 24h6"/>
+</symbol>
+<symbol id="kyc" viewBox="0 0 48 48">
+  <rect fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x="5" y="11" width="38" height="26" rx="2"/><circle fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" cx="17" cy="22" r="4.5"/>
+  <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M10 31c1.5-3.5 4-5 7-5s5.5 1.5 7 5M28 20h9M28 26h7"/>
+</symbol>
+<symbol id="jeu-responsable" viewBox="0 0 48 48">
+  <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M8 34a16 16 0 0132 0"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M24 34l8-11"/><circle fill="currentColor" cx="24" cy="34" r="2.6"/>
+  <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 26l2.5 1.5M17 19.5l1.5 2.5M24 17v3"/>
+</symbol>
+<symbol id="monetisation" viewBox="0 0 48 48">
+  <ellipse fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" cx="20" cy="12" rx="11" ry="4.5"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 12v8c0 2.5 5 4.5 11 4.5s11-2 11-4.5v-8M9 20v8c0 2.5 5 4.5 11 4.5"/>
+  <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M30 30l5-5 4 4 5-7"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M38 22h6v6"/>
+</symbol>
+<symbol id="sortie" viewBox="0 0 48 48">
+  <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M14 34L34 14M19 14h15v15"/>
+</symbol>
+</svg>

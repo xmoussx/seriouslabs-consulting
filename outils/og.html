@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Image de partage</title>
+<!-- Rendu en 1200 × 630 par outils/og.py. Non déployé. -->
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/conseil.css">
+<style>
+  body { width: 1200px; height: 630px; overflow: hidden; }
+  .og { display: flex; flex-direction: column; justify-content: center; height: 630px; padding: 0 80px; }
+  .og h1 { margin-top: 36px; font-size: 92px; line-height: 1.02; }
+  .og .figs { margin-top: 44px; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: auto; }
+  .og .fig__n { font-size: 60px; }
+  .og .src { margin-top: 22px; color: var(--ink-2); font-size: 18px; }
+</style>
+</head>
+<body>
+<div class="og">
+  <span class="mark"><img src="/assets/img/logo.svg" alt="" width="20" height="28"><span>Serious Labs <em>Consulting</em></span></span>
+  <h1 data-t></h1>
+  <dl class="figs">
+    <div class="fig"><dt data-l="0"></dt><dd><span class="fig__n" data-n="0"></span></dd></div>
+    <div class="fig"><dt data-l="1"></dt><dd><span class="fig__n" data-n="1"></span></dd></div>
+    <div class="fig"><dt data-l="2"></dt><dd><span class="fig__n">17</span></dd></div>
+  </dl>
+  <p class="src" data-s></p>
+</div>
+</body>
+</html>

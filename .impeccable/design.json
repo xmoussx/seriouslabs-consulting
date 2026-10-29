@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T15:07:46+00:00",
+  "title": "Design System: Serious Labs Consulting",
+  "extensions": {
+    "colorMeta": {
+      "steel": {
+        "role": "neutral",
+        "displayName": "Acier",
+        "canonical": "#1b1e22",
+        "oklch": "oklch(23.4% 0.009 255.6)",
+        "tonalRamp": [
+          "#090b0f",
+          "#222529",
+          "#3f4247",
+          "#5e6266",
+          "#7f8388",
+          "#a1a5ab",
+          "#c5c9cf",
+          "#ebeff5"
+        ]
+      },
+      "steel-2": {
+        "role": "neutral",
+        "displayName": "Tôle",
+        "canonical": "#23272c",
+        "oklch": "oklch(27.1% 0.011 254.0)",
+        "tonalRamp": [
+          "#080b10",
+          "#21252a",
+          "#3e4248",
+          "#5d6267",
+          "#7e8389",
+          "#a0a6ac",
+          "#c4cad0",
+          "#eaeff6"
+        ]
+      },
+      "steel-0": {
+        "role": "neutral",
+        "displayName": "Ombre",
+        "canonical": "#131518",
+        "oklch": "oklch(19.5% 0.007 258.4)",
+        "tonalRamp": [
+          "#090b0e",
+          "#232528",
+          "#404246",
+          "#5f6165",
+          "#808286",
+          "#a2a5a9",
+          "#c6c9ce",
+          "#eceff3"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Filet",
+        "canonical": "#353b42",
+        "oklch": "oklch(34.9% 0.015 252.3)",
+        "tonalRamp": [
+          "#070c11",
+          "#20262c",
+          "#3d434a",
+          "#5b626a",
+          "#7c838b",
+          "#9fa6ae",
+          "#c3cad3",
+          "#e8eff8"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Encre",
+        "canonical": "#eef0f2",
+        "oklch": "oklch(95.4% 0.003 247.9)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#242527",
+          "#414244",
+          "#606163",
+          "#818284",
+          "#a3a5a7",
+          "#c7c9cb",
+          "#edeff1"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Encre secondaire",
+        "canonical": "#aab2ba",
+        "oklch": "oklch(76.0% 0.015 248.0)",
+        "tonalRamp": [
+          "#070c11",
+          "#20262c",
+          "#3c434a",
+          "#5b6269",
+          "#7c838b",
+          "#9ea6ae",
+          "#c2cad2",
+          "#e7f0f8"
+        ]
+      },
+      "brass": {
+        "role": "primary",
+        "displayName": "Laiton",
+        "canonical": "#d4a64a",
+        "oklch": "oklch(75.0% 0.122 82.2)",
+        "tonalRamp": [
+          "#120900",
+          "#322201",
+          "#563d02",
+          "#7d5b07",
+          "#a67a0e",
+          "#cb9d40",
+          "#f0c167",
+          "#ffeccb"
+        ]
+      },
+      "brass-2": {
+        "role": "primary",
+        "displayName": "Laiton clair",
+        "canonical": "#e7c37a",
+        "oklch": "oklch(83.3% 0.100 84.1)",
+        "tonalRamp": [
+          "#110a00",
+          "#312200",
+          "#553e00",
+          "#7c5b02",
+          "#9f7d33",
+          "#c3a057",
+          "#e8c47b",
+          "#feedca"
+        ]
+      },
+      "rouge": {
+        "role": "error",
+        "displayName": "Rouge",
+        "canonical": "#c4382a",
+        "oklch": "oklch(54.9% 0.179 29.7)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0100",
+          "#800300",
+          "#b02217",
+          "#d94c3c",
+          "#fd7563",
+          "#fdb4a8",
+          "#fee9e5"
+        ]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Turquoise de statut",
+        "canonical": "#2aa9be",
+        "oklch": "oklch(67.8% 0.108 211.6)",
+        "tonalRamp": [
+          "#000e11",
+          "#012b32",
+          "#024b56",
+          "#086d7d",
+          "#1092a6",
+          "#3eb7cc",
+          "#68dcf2",
+          "#d0f7fe"
+        ]
+      },
+      "s-ps": {
+        "role": "data",
+        "displayName": "Segment paris sportifs",
+        "canonical": "#bb8a2e",
+        "oklch": "oklch(66.5% 0.121 79.2)",
+        "tonalRamp": [
+          "#120900",
+          "#332101",
+          "#573c04",
+          "#7f590b",
+          "#a97814",
+          "#cd9b42",
+          "#f3c068",
+          "#feeccf"
+        ]
+      },
+      "s-po": {
+        "role": "data",
+        "displayName": "Segment poker",
+        "canonical": "#1f9db3",
+        "oklch": "oklch(64.2% 0.106 213.1)",
+        "tonalRamp": [
+          "#000e12",
+          "#022a32",
+          "#074a56",
+          "#116d7d",
+          "#0292a8",
+          "#43b6cd",
+          "#6cdbf2",
+          "#d1f6ff"
+        ]
+      },
+      "s-ph": {
+        "role": "data",
+        "displayName": "Segment paris hippiques",
+        "canonical": "#cf4e3c",
+        "oklch": "oklch(59.4% 0.167 30.6)",
+        "tonalRamp": [
+          "#1e0000",
+          "#4b0602",
+          "#7d1005",
+          "#ac2c1c",
+          "#d35240",
+          "#fc7762",
+          "#feb4a6",
+          "#ffe9e5"
+        ]
+      },
+      "field-edge": {
+        "role": "neutral",
+        "displayName": "Bord de champ",
+        "canonical": "#737b84",
+        "oklch": "oklch(57.9% 0.017 251.3)",
+        "tonalRamp": [
+          "#060c12",
+          "#1f262d",
+          "#3c434b",
+          "#5a626b",
+          "#7b838c",
+          "#9ea6b0",
+          "#c1cad4",
+          "#e7f0fa"
+        ]
+      },
+      "field-focus": {
+        "role": "neutral",
+        "displayName": "Champ au focus",
+        "canonical": "#202428",
+        "oklch": "oklch(25.8% 0.010 248.2)",
+        "tonalRamp": [
+          "#080c0f",
+          "#22262a",
+          "#3e4347",
+          "#5d6266",
+          "#7e8388",
+          "#a0a6ab",
+          "#c4cacf",
+          "#eaeff5"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Indication",
+        "canonical": "#8d959d",
+        "oklch": "oklch(66.6% 0.015 248.1)",
+        "tonalRamp": [
+          "#070c11",
+          "#1f262c",
+          "#3c434a",
+          "#5b626a",
+          "#7c838b",
+          "#9ea6ae",
+          "#c2cad3",
+          "#e7f0f8"
+        ]
+      },
+      "error-text": {
+        "role": "error",
+        "displayName": "Texte d'erreur",
+        "canonical": "#f0a49b",
+        "oklch": "oklch(79.0% 0.092 26.8)",
+        "tonalRamp": [
+          "#1f0001",
+          "#480a09",
+          "#6b2b26",
+          "#8e4b44",
+          "#b36c64",
+          "#d98f86",
+          "#fdb4ab",
+          "#ffe9e6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Titre d'ouverture",
+        "purpose": "Le h1, sous le tableau du marché ; aussi le titre de la page absente, réduit à clamp(2.8rem, 8vw, 5rem) sur 1."
+      },
+      "heading": {
+        "displayName": "Titre de section",
+        "purpose": "Services, références, marchés, demande."
+      },
+      "heading-sm": {
+        "displayName": "Petit titre de section",
+        "purpose": "Travaux publics."
+      },
+      "figure": {
+        "displayName": "Chiffre du tableau",
+        "purpose": "Les quatre chiffres de l'ANJ ; Big Shoulders pleine, pas pochoir, pour que le « € » se lise."
+      },
+      "board-year": {
+        "displayName": "Année du tableau",
+        "purpose": "L'année affichée, en laiton, en tête du tableau."
+      },
+      "board-title": {
+        "displayName": "Titre du tableau",
+        "purpose": "« The French online gambling market »."
+      },
+      "entry-date": {
+        "displayName": "Date de mission",
+        "purpose": "Année d'une entrée du registre, en laiton."
+      },
+      "entry-title": {
+        "displayName": "Nom de mission",
+        "purpose": "Nom d'une entrée du registre."
+      },
+      "row-title": {
+        "displayName": "Nom de service",
+        "purpose": "Nom d'une ligne de service."
+      },
+      "market-name": {
+        "displayName": "Nom de marché",
+        "purpose": "Première cellule d'une rangée de la table des marchés, sans césure."
+      },
+      "wordmark": {
+        "displayName": "Mot-symbole",
+        "purpose": "« Serious Labs Consulting » dans l'entête, le pied et la page absente ; 1,1rem sous 26rem."
+      },
+      "lede": {
+        "displayName": "Chapeau",
+        "purpose": "Sous chaque titre de section (60ch au plus) et sous le h1."
+      },
+      "body": {
+        "displayName": "Corps",
+        "purpose": "Texte courant."
+      },
+      "body-sm": {
+        "displayName": "Petit corps",
+        "purpose": "Descriptions de service et de marché, navigation, pied de page."
+      },
+      "readout": {
+        "displayName": "Ligne de lecture",
+        "purpose": "Les trois segments de l'année affichée, chiffres tabulaires."
+      },
+      "meta": {
+        "displayName": "Mention",
+        "purpose": "Libellés des chiffres, légende, source, nature d'une mission, statuts, mots-clés, messages d'erreur (en gras)."
+      },
+      "axis": {
+        "displayName": "Graduation",
+        "purpose": "Axes et millésimes du graphique, en HTML ; 0,6875rem sous 40rem pour les millésimes non choisis."
+      },
+      "label": {
+        "displayName": "Libellé de champ",
+        "purpose": "Libellés du formulaire."
+      },
+      "button": {
+        "displayName": "Bouton",
+        "purpose": "Texte des boutons de laiton."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Courbe des transitions (survol des boutons)."
+      },
+      {
+        "name": "button-hover",
+        "value": "background-color .2s cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Seule transition du site : le laiton s'éclaircit au survol."
+      },
+      {
+        "name": "bar-hover",
+        "value": "filter: brightness(1.15)",
+        "purpose": "Barre survolée à la souris, instantané, sans transition."
+      },
+      {
+        "name": "scroll",
+        "value": "scroll-behavior: smooth; scroll-padding-top: 5rem",
+        "purpose": "Défilement vers les ancres, sous l'entête collant."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "scroll-behavior: auto; transition-duration: .01ms; animation: none",
+        "purpose": "Sous prefers-reduced-motion: reduce, tout devient immédiat."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mark-sm",
+        "value": "26rem",
+        "purpose": "max-width : le mot-symbole passe à 1,1rem."
+      },
+      {
+        "name": "form-1col",
+        "value": "30rem",
+        "purpose": "max-width : le formulaire passe en une colonne."
+      },
+      {
+        "name": "phone",
+        "value": "40rem",
+        "purpose": "max-width : missions et table des marchés se replient, millésimes réduits."
+      },
+      {
+        "name": "columns",
+        "value": "52rem",
+        "purpose": "min-width : services en deux colonnes, travaux publics en trois."
+      },
+      {
+        "name": "wide",
+        "value": "64rem",
+        "purpose": "min-width : tableau, ouverture et demande en deux colonnes."
+      },
+      {
+        "name": "nav",
+        "value": "760px",
+        "purpose": "max-width : la navigation ne garde que la langue et Contact."
+      }
+    ],
+    "focus": {
+      "value": "outline: 3px solid #d4a64a; outline-offset: 3px",
+      "purpose": "Anneau de focus partout, sauf les champs, dont le bas passe au laiton."
+    },
+    "header": {
+      "value": "background: rgb(27 30 34 / .82); backdrop-filter: blur(10px) saturate(1.2)",
+      "fallback": "rgb(27 30 34 / .94)"
+    },
+    "chartValidation": {
+      "tool": "dataviz validate_palette (mode dark)",
+      "palette": [
+        "#bb8a2e",
+        "#1f9db3",
+        "#cf4e3c"
+      ],
+      "surfaces": [
+        "#1b1e22",
+        "#23272c"
+      ],
+      "result": "ALL CHECKS PASS (adjacent pairs, stack order)",
+      "worstAdjacentCVD": "ΔE 16,4 deutan, poker ↔ hippique",
+      "worstAdjacentNormal": "ΔE 21,0, sport ↔ poker",
+      "allPairsNote": "sport ↔ hippique ΔE 14,4 normal / 7,0 deutan : ne jamais les rendre voisins",
+      "contrastOnSteel2": {
+        "s-ps": 4.86,
+        "s-po": 4.67,
+        "s-ph": 3.44
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Bouton laiton",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "L'action de la page : « Discuss your project », « Send ». Aplat de laiton, texte acier, sans rayon.",
+      "html": "<button class=\"ds-cta\" type=\"button\">Discuss your project</button>",
+      "css": ".ds-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: .75rem 1.4rem; border: 0; border-radius: 0; background: var(--brass, #d4a64a); color: var(--steel, #1b1e22); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.2; cursor: pointer; transition: background-color .2s cubic-bezier(.16, 1, .3, 1); } .ds-cta:hover { background: var(--brass-2, #e7c37a); } .ds-cta:focus-visible { outline: 3px solid var(--brass, #d4a64a); outline-offset: 3px; } .ds-cta:disabled { opacity: .6; cursor: progress; }"
+    },
+    {
+      "name": "Petit bouton d'entête",
+      "kind": "button",
+      "refersTo": "button-small",
+      "description": "« Contact » dans l'entête, 2,75rem de haut.",
+      "html": "<a class=\"ds-cta-sm\" href=\"#contact\">Contact</a>",
+      "css": ".ds-cta-sm { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .55rem 1rem; background: var(--brass, #d4a64a); color: var(--steel, #1b1e22); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-weight: 700; font-size: .9375rem; line-height: 1.2; text-decoration: none; transition: background-color .2s cubic-bezier(.16, 1, .3, 1); } .ds-cta-sm:hover { background: var(--brass-2, #e7c37a); } .ds-cta-sm:focus-visible { outline: 3px solid var(--brass, #d4a64a); outline-offset: 3px; }"
+    },
+    {
+      "name": "Champ de saisie",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Champ du formulaire de demande, sur la tôle : bas de 2 px en bord de champ (3,50:1), laiton au focus, rouge pointillé et message en erreur.",
+      "html": "<div class=\"ds-form\"><div class=\"ds-f\"><label for=\"ds-n\">Your name <span class=\"ds-req\" aria-hidden=\"true\">*</span></label><input id=\"ds-n\" class=\"ds-input\" type=\"text\"></div><div class=\"ds-f\"><label for=\"ds-e\">Work email <span class=\"ds-req\" aria-hidden=\"true\">*</span></label><input id=\"ds-e\" class=\"ds-input\" type=\"email\" aria-invalid=\"true\" aria-describedby=\"ds-err\" value=\"antoine@\"><p class=\"ds-err\" id=\"ds-err\">This email address looks incomplete.</p></div></div>",
+      "css": ".ds-form { display: grid; gap: 1.25rem; padding: 1.5rem; background: var(--steel-2, #23272c); color: var(--ink, #eef0f2); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-f label { display: block; font-size: .9375rem; font-weight: 700; } .ds-req { color: var(--brass, #d4a64a); } .ds-input { width: 100%; min-height: 3rem; margin-top: .4rem; padding: .7rem .8rem; border: 1px solid var(--rule, #353b42); border-bottom: 2px solid #737b84; border-radius: 0; background: var(--steel, #1b1e22); color: var(--ink, #eef0f2); font: inherit; } .ds-input::placeholder { color: #8d959d; } .ds-input:focus-visible { outline: none; border-bottom-color: var(--brass, #d4a64a); background: #202428; } .ds-input[aria-invalid='true'] { border-bottom-color: var(--rouge, #c4382a); border-bottom-style: dashed; } .ds-err { margin: .35rem 0 0; color: #f0a49b; font-size: .8125rem; font-weight: 700; } .ds-err::before { content: '! ' / ''; }"
+    },
+    {
+      "name": "Entête",
+      "kind": "nav",
+      "refersTo": "wordmark",
+      "description": "Entête collant en acier translucide : mot-symbole avec « Consulting » en laiton, sections, langue, Contact.",
+      "html": "<header class=\"ds-head\"><a class=\"ds-mark\" href=\"#\"><span>Serious Labs <em>Consulting</em></span></a><nav class=\"ds-nav\"><a href=\"#\">Services</a><a href=\"#\">Track record</a><a href=\"#\">Markets</a><a href=\"#\" lang=\"fr\">FR</a><a class=\"ds-nav__cta\" href=\"#\">Contact</a></nav></header>",
+      "css": ".ds-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; padding: 0 1.25rem; background: rgb(27 30 34 / .82); backdrop-filter: blur(10px) saturate(1.2); border-bottom: 1px solid var(--rule, #353b42); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-mark { color: var(--ink, #eef0f2); text-decoration: none; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 1.35rem; line-height: 1; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; } .ds-mark em { font-style: normal; color: var(--brass, #d4a64a); } .ds-nav { display: flex; align-items: center; gap: 1.5rem; } .ds-nav a { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--ink-2, #aab2ba); font-size: .9375rem; text-decoration: none; } .ds-nav a:hover { color: var(--ink, #eef0f2); } .ds-nav a:focus-visible, .ds-mark:focus-visible { outline: 3px solid var(--brass, #d4a64a); outline-offset: 3px; } .ds-nav .ds-nav__cta { padding: .55rem 1rem; background: var(--brass, #d4a64a); color: var(--steel, #1b1e22); font-weight: 700; } .ds-nav .ds-nav__cta:hover { background: var(--brass-2, #e7c37a); color: var(--steel, #1b1e22); }"
+    },
+    {
+      "name": "Étiquettes de statut",
+      "kind": "chip",
+      "refersTo": "status-regulated",
+      "description": "Statut d'un marché dans la table : cadre de 1 px, sans rayon. Le mot porte le statut, la couleur le redouble.",
+      "html": "<p class=\"ds-sts\"><span class=\"ds-st ds-st--reg\">Regulated</span><span class=\"ds-st ds-st--new\">Emerging</span><span class=\"ds-st ds-st--move\">In transition</span><span class=\"ds-st\">All types</span></p>",
+      "css": ".ds-sts { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0; padding: 1rem; background: var(--steel, #1b1e22); } .ds-st { display: inline-block; padding: .15rem .55rem; border: 1px solid var(--rule, #353b42); color: var(--ink, #eef0f2); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: .8125rem; } .ds-st--reg { border-color: var(--brass, #d4a64a); color: var(--brass-2, #e7c37a); } .ds-st--new { border-color: var(--teal, #2aa9be); color: var(--teal, #2aa9be); } .ds-st--move { border-style: dashed; }"
+    },
+    {
+      "name": "Tableau du marché",
+      "kind": "custom",
+      "refersTo": "board",
+      "description": "Composant signature : panneau de tôle sous filet de laiton, chiffres de l'ANJ, barres empilées sport/poker/hippique, année choisie marquée en encre, ligne de lecture et source. Extrait réduit (2018 à 2024).",
+      "html": "<figure class=\"ds-board\"><figcaption class=\"ds-board__head\"><span class=\"ds-board__t\">The French online gambling market</span><span class=\"ds-board__y\">2024</span></figcaption><dl class=\"ds-figs\"><div class=\"ds-fig\"><dt>Gross gaming revenue</dt><dd>€2.59bn</dd></div><div class=\"ds-fig\"><dt>Licensed operators</dt><dd>17<small>29 licences</small></dd></div></dl><div class=\"ds-plot\"><svg viewBox=\"0 0 280 220\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><line x1=\"0\" x2=\"280\" y1=\"146.7\" y2=\"146.7\" stroke=\"#353b42\" vector-effect=\"non-scaling-stroke\"/><line x1=\"0\" x2=\"280\" y1=\"73.3\" y2=\"73.3\" stroke=\"#353b42\" vector-effect=\"non-scaling-stroke\"/><rect fill=\"#bb8a2e\" x=\"6\" y=\"216.2\" width=\"28\" height=\"1.8\"/><rect fill=\"#1f9db3\" x=\"6\" y=\"208.0\" width=\"28\" height=\"6.2\"/><rect fill=\"#cf4e3c\" x=\"6\" y=\"200.7\" width=\"28\" height=\"7.3\"/><rect fill=\"#bb8a2e\" x=\"46\" y=\"157.5\" width=\"28\" height=\"60.5\"/><rect fill=\"#1f9db3\" x=\"46\" y=\"139.6\" width=\"28\" height=\"15.9\"/><rect fill=\"#cf4e3c\" x=\"46\" y=\"119.7\" width=\"28\" height=\"19.9\"/><rect fill=\"#bb8a2e\" x=\"86\" y=\"153.1\" width=\"28\" height=\"64.9\"/><rect fill=\"#1f9db3\" x=\"86\" y=\"122.4\" width=\"28\" height=\"28.7\"/><rect fill=\"#cf4e3c\" x=\"86\" y=\"96.4\" width=\"28\" height=\"26.0\"/><rect fill=\"#bb8a2e\" x=\"126\" y=\"122.6\" width=\"28\" height=\"95.4\"/><rect fill=\"#1f9db3\" x=\"126\" y=\"93.1\" width=\"28\" height=\"27.5\"/><rect fill=\"#cf4e3c\" x=\"126\" y=\"65.6\" width=\"28\" height=\"27.5\"/><rect fill=\"#bb8a2e\" x=\"166\" y=\"120.1\" width=\"28\" height=\"97.9\"/><rect fill=\"#1f9db3\" x=\"166\" y=\"89.7\" width=\"28\" height=\"28.4\"/><rect fill=\"#cf4e3c\" x=\"166\" y=\"64.3\" width=\"28\" height=\"25.4\"/><rect fill=\"#bb8a2e\" x=\"206\" y=\"113.7\" width=\"28\" height=\"104.3\"/><rect fill=\"#1f9db3\" x=\"206\" y=\"78.7\" width=\"28\" height=\"33.0\"/><rect fill=\"#cf4e3c\" x=\"206\" y=\"52.8\" width=\"28\" height=\"25.9\"/><rect fill=\"#bb8a2e\" x=\"246\" y=\"92.9\" width=\"28\" height=\"125.1\"/><rect fill=\"#1f9db3\" x=\"246\" y=\"58.7\" width=\"28\" height=\"32.2\"/><rect fill=\"#cf4e3c\" x=\"246\" y=\"33.8\" width=\"28\" height=\"24.9\"/></svg><ol class=\"ds-years\" aria-hidden=\"true\"><li>2018</li><li>2019</li><li>2020</li><li>2021</li><li>2022</li><li>2023</li><li class=\"is-sel\">2024</li></ol></div><p class=\"ds-readout\">2024: sports betting €1.76bn · poker €493m · horse racing €339m</p><p class=\"ds-src\">Source: ANJ open data, 2010 to 2024, data.gouv.fr</p></figure>",
+      "css": ".ds-board { margin: 0; padding: 1.5rem; border: 1px solid var(--rule, #353b42); border-top: 2px solid var(--brass, #d4a64a); background: var(--steel-2, #23272c); color: var(--ink, #eef0f2); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-board__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; } .ds-board__t { font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 1.3rem; line-height: 1.1; letter-spacing: .03em; text-transform: uppercase; } .ds-board__y { font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 2.4rem; line-height: 1; color: var(--brass, #d4a64a); font-variant-numeric: tabular-nums; } .ds-figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; margin: 1.25rem 0 0; } .ds-fig { padding-top: .7rem; border-top: 1px solid var(--rule, #353b42); } .ds-fig dt { color: var(--ink-2, #aab2ba); font-size: .8125rem; } .ds-fig dd { margin: .3rem 0 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 2.6rem; line-height: 1; letter-spacing: .01em; font-variant-numeric: tabular-nums; } .ds-fig small { display: block; margin-top: .35rem; font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-weight: 400; font-size: .8125rem; color: var(--ink-2, #aab2ba); letter-spacing: 0; } .ds-plot { position: relative; margin-top: 1.25rem; padding-bottom: 1.6rem; } .ds-plot svg { display: block; width: 100%; height: 10rem; } .ds-plot rect { transition: filter .2s; } .ds-plot rect:hover { filter: brightness(1.15); } .ds-years { position: absolute; inset: auto 0 0; display: flex; margin: 0; padding: 0; list-style: none; } .ds-years li { flex: 1; padding-top: .45rem; color: var(--ink-2, #aab2ba); font-size: .75rem; text-align: center; } .ds-years li.is-sel { position: relative; color: var(--ink, #eef0f2); font-weight: 700; } .ds-years li.is-sel::before { content: ''; position: absolute; inset: 0 18% auto; height: 3px; background: var(--ink, #eef0f2); } .ds-readout { margin: .6rem 0 0; font-size: .875rem; font-variant-numeric: tabular-nums; } .ds-src { margin: 1rem 0 0; color: var(--ink-2, #aab2ba); font-size: .8125rem; }"
+    },
+    {
+      "name": "Ligne de service",
+      "kind": "custom",
+      "refersTo": "service-row",
+      "description": "Un service : pictogramme au trait de laiton dans un carré de 3rem, nom en capitales, phrase, mots-clés.",
+      "html": "<div class=\"ds-svc\"><svg class=\"ds-picto\" viewBox=\"0 0 48 48\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M24 6l15 6v11c0 9-6.5 16-15 19-8.5-3-15-10-15-19V12z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M17 24l5 5 9-10\"/></svg><h3>Game integrity</h3><p>Anti-cheating systems, bot detection, collusion prevention and fraud monitoring that protect players and operators alike.</p><p class=\"ds-svc__tags\">Anti-cheating · Bot detection · Collusion prevention</p></div>",
+      "css": ".ds-svc { display: grid; grid-template-columns: 3rem minmax(0, 1fr); column-gap: 1.25rem; padding: 1.6rem 0; border-top: 1px solid var(--rule, #353b42); border-bottom: 1px solid var(--rule, #353b42); background: var(--steel, #1b1e22); color: var(--ink, #eef0f2); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-svc > :not(.ds-picto) { grid-column: 2; margin: 0; } .ds-picto { grid-row: 1 / span 3; width: 3rem; height: 3rem; padding: .5rem; border: 1px solid var(--rule, #353b42); color: var(--brass, #d4a64a); box-sizing: border-box; } .ds-svc h3 { font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 1.5rem; line-height: 1.05; text-transform: uppercase; } .ds-svc p { margin-top: .45rem; color: var(--ink-2, #aab2ba); font-size: .9375rem; line-height: 1.6; } .ds-svc .ds-svc__tags { margin-top: .6rem; color: var(--ink, #eef0f2); font-size: .8125rem; }"
+    },
+    {
+      "name": "Entrée du registre des missions",
+      "kind": "custom",
+      "refersTo": "entry",
+      "description": "Une mission d'Antoine Dugast : date en laiton, nom en capitales, phrase, nature à droite ; sous un filet de laiton de 2 px pour la première.",
+      "html": "<ol class=\"ds-entries\"><li class=\"ds-entry\"><p class=\"ds-entry__date\">2010</p><div><h3 class=\"ds-entry__name\">PokerStars France</h3><p class=\"ds-entry__p\">Part of the team that launched PokerStars on the French market, under the ARJEL framework.</p></div><p class=\"ds-entry__kind\">Regulated launch</p></li><li class=\"ds-entry\"><p class=\"ds-entry__date\">2013</p><div><h3 class=\"ds-entry__name\">PokerStars Spain</h3><p class=\"ds-entry__p\">Deployment of PokerStars in Spain and a launch strategy built for the Spanish market.</p></div><p class=\"ds-entry__kind\">Regulated launch</p></li></ol>",
+      "css": ".ds-entries { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--brass, #d4a64a); background: var(--steel, #1b1e22); color: var(--ink, #eef0f2); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-entry { display: grid; grid-template-columns: 7rem minmax(0, 1fr) 12rem; gap: .4rem 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--rule, #353b42); } .ds-entry p, .ds-entry h3 { margin: 0; } .ds-entry__date { color: var(--brass, #d4a64a); font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 2rem; line-height: 1; font-variant-numeric: tabular-nums; } .ds-entry__name { font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 1.6rem; line-height: 1.05; text-transform: uppercase; } .ds-entry__p { max-width: 64ch; margin-top: .4rem !important; color: var(--ink-2, #aab2ba); } .ds-entry__kind { padding-top: .35rem; color: var(--ink-2, #aab2ba); font-size: .8125rem; text-align: right; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le marché en chiffres",
+    "overview": "La page s'ouvre sur un tableau de bord du marché français des jeux en ligne, tiré des données ouvertes de l'ANJ. Le visiteur, dirigeant ou responsable conformité d'un opérateur, voit d'abord le marché : le produit brut des jeux, les comptes joueurs, les opérateurs, les mises, et quinze ans de barres empilées qu'il parcourt année par année. Le titre « This market, seen from the inside. » ne commence qu'en dessous. La preuve vient avant ce qu'on en dit.\n\nLe reste de la page est un registre : les services en lignes à pictogramme, le parcours d'Antoine Dugast en entrées datées, les marchés dans une vraie table, les travaux publics, puis la demande. Pas de carte, pas d'ombre, pas d'image. La tôle (`#23272c`) ne porte que deux choses : le tableau et la section de demande.\n\nLe monde refuse la page de cabinet à emoji, les chiffres-héros génériques sans source et la grille de cartes de services.",
+    "keyCharacteristics": [
+      "Acier anthracite et laiton, comme seriouslabs.tech ; pas de plastiques.",
+      "Un panneau de tôle coiffé d'un filet de laiton de 2 px, en tête de page.",
+      "Trois couleurs de segment, validées pour le daltonisme, et nulle part ailleurs que dans le graphique.",
+      "Chaque chiffre affiché remonte au fichier de l'ANJ.",
+      "Capitales condensées Big Shoulders 900 pour les titres et les chiffres, Atkinson Hyperlegible Next pour tout le reste.",
+      "Des lignes et des filets, jamais des cartes."
+    ],
+    "rules": [
+      {
+        "name": "La règle de l'encre pour le choix",
+        "body": "L'année choisie est marquée en encre, jamais en laiton. Le laiton et le segment des paris sportifs sont de la même famille (1,38:1 entre eux) : un repère de laiton sous une barre se confondrait avec elle.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle de l'ordre des segments",
+        "body": "De bas en haut : paris sportifs, poker, paris hippiques. Sport et hippique ne se touchent jamais : comparés entre eux, ils tombent à ΔE 14,4 en vision normale, sous le plancher de 15, et à 7,0 en deutéranopie. Le poker les sépare.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle des segments au graphique",
+        "body": "Les trois couleurs de segment n'existent que dans le graphique et sa légende. Ailleurs, l'acier, le laiton et un turquoise de statut suffisent.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle du filet ouvert",
+        "body": "Un filet de laiton de 2 px coiffe ce qui ouvre une liste ou un panneau : le tableau, le registre des missions, l'entête de la table des marchés. Un filet d'acier de 1 px sépare les lignes.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle du texte en HTML",
+        "body": "Aucun texte dans le SVG du graphique. Le SVG s'étire en hauteur (`preserveAspectRatio=\"none\"`) ; les graduations et les millésimes sont du HTML posé par-dessus, à taille fixe, lisibles à toutes les largeurs.",
+        "section": "typography"
+      },
+      {
+        "name": "Pas de sur-titre",
+        "body": "Comme sur seriouslabs.tech, aucun libellé au-dessus d'un titre.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle du plat",
+        "body": "Rien ne flotte. Une barre survolée s'éclaircit, elle ne se soulève pas.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** ouvrir sur les données : le tableau du marché passe avant le titre et avant toute affirmation.",
+      "**Do** faire remonter chaque chiffre au fichier de l'ANJ par `outils/marche.py`, et relancer `outils/og.py` après chaque mise à jour des données, dont il répète les valeurs en dur.",
+      "**Do** marquer la sélection en encre (`#eef0f2`), et garder l'ordre des segments : sport, poker, hippique, de bas en haut.",
+      "**Do** garder les textes du graphique en HTML et le SVG étirable, sans texte.",
+      "**Do** attribuer l'expérience à Antoine Dugast, qui a participé aux lancements : « Antoine Dugast was part of the PokerStars launches… », « Antoine Dugast a participé… ».",
+      "**Do** garder une table de données sous le graphique, et la note de 2010 partout où 2010 apparaît.",
+      "**Do** dessiner tout nouveau pictogramme dans la grammaire de la planche : grille de 48, trait de 2,4, bouts ronds.",
+      "**Do** vérifier à 3:1 au moins toute limite de champ et tout segment de graphique contre la surface où il est posé, et le calculer."
+    ],
+    "donts": [
+      "**Don't** prêter l'expérience à la société : pas de « Serious Labs depuis 2010 », pas de « nous avons lancé » ; la société n'a pas quinze ans.",
+      "**Don't** afficher un chiffre sans source, ni de montant de gain chez un client : les gains Betclic restent qualitatifs.",
+      "**Don't** marquer l'année choisie en laiton, ni poser sport et hippique l'un contre l'autre.",
+      "**Don't** annoncer un survol à la région vivante, ni l'année au chargement.",
+      "**Don't** faire de cartes, d'ombres, de dégradés ou d'emoji.",
+      "**Don't** employer les trois couleurs de segment hors du graphique, ni les plastiques de seriouslabs.tech sur ce site.",
+      "**Don't** afficher le formulaire sans script, ni une adresse de courriel en clair."
+    ]
+  }
+}
