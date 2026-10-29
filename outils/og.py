@@ -8,10 +8,10 @@ import asyncio
 from playwright.async_api import async_playwright
 
 TEXTES = {
-    "en": ("This market,<br>seen from the inside.",
+    "en": ("Gambling,<br>seen from the inside.",
            ["French online GGR, 2024", "Active player accounts", "Licensed operators"],
            ["€2.59bn", "5.70M"], "Source: ANJ open data"),
-    "fr": ("Ce marché,<br>vu de l'intérieur.",
+    "fr": ("Le jeu d'argent,<br>vu de l'intérieur.",
            ["Produit brut des jeux en ligne, 2024", "Comptes joueurs actifs", "Opérateurs agréés"],
            ["2,59 Md€", "5,70 millions"], "Source : données ouvertes de l'ANJ"),
 }
